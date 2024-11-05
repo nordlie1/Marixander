@@ -531,3 +531,81 @@ body {
     -webkit-overflow-scrolling: touch;
     padding-left: 40px; /* Juster hvor mye padding som ønskes på venstre side */
 }
+/* Standard desktopvisning (større skjermer) */
+.gallery-container {
+    width: 90%; /* Bruker en bredde som fungerer for desktop */
+    overflow: hidden;
+}
+
+/* Mobilvisning: Skjermbredde mindre enn 768px (tablets og mobil) */
+@media (max-width: 768px) {
+    .gallery-container {
+        width: 100%; /* Full bredde for mobil */
+        margin-left: 0; /* Fjern ekstra margin for å sentrere galleriet */
+        padding: 0 10px; /* Litt padding for å unngå at innholdet går helt til kanten */
+    }
+
+    .gallery-item {
+        width: 100px; /* Reduserer bredden på bilder på mobil */
+        height: 100px;
+        margin-right: 8px; /* Mindre mellomrom mellom bilder */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Justerer fontstørrelsen for titler på mobil */
+    }
+}
+
+/* Ekstremt små skjermer: Skjermbredde mindre enn 480px */
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 80px; /* Reduserer bildestørrelsen ytterligere på veldig små skjermer */
+        height: 80px;
+    }
+
+    h2 {
+        font-size: 1.3em; /* Reduserer fontstørrelsen ytterligere */
+        padding: 10px;
+    }
+}
+/* Standard desktopvisning */
+body {
+    font-size: 16px; /* Grunnstørrelse på tekst */
+}
+
+/* For mobilskjermer opp til 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px; /* Justerer tekststørrelsen ned på mobil */
+    }
+
+    .gallery-container {
+        width: 100%; /* Bruker hele skjermbredden på mobil */
+        padding: 0 10px;
+    }
+
+    .gallery-item {
+        width: 100px; /* Reduserer bildestørrelsen */
+        height: 100px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Justerer overskriftsstørrelse på mobil */
+    }
+}
+
+/* For veldig små skjermer (opp til 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Enda mindre tekst for små skjermer */
+    }
+
+    .gallery-item {
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
