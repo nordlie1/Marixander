@@ -110,4 +110,5 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('cookie-banner').style.display = 'block';
     }
 });
+console.log("Nettsiden har lastet!");
 
