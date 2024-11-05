@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marixander</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Header med logo og meny -->
+    <header>
+        <div class="header-logo-container">
+            <img src="https://imgur.com/vZD4UrJ.png" alt="Marixander Logo" class="logo">
+        </div>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Hjem</a></li>
+                <li class="dropdown">
+                    <span class="non-clickable">Portfolio</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="photography.html">Bilder</a></li>
+                        <li><a href="design.html">Design</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="non-clickable">Tjenester</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="consulting.html">Fotografering</a></li>
+                        <li><a href="web-development.html">Webutvikling</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">Om oss</a></li>
+                <li><a href="contact.html">Kontakt oss</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hovedinnhold -->
+    <main>
+<!-- Velkomstseksjon -->
+<section class="welcome-section">
+    <div class="image-container"></div>
+    <div class="text-container">
+        <h1>Konsultasjon</h1>
+        <p>Vi er Marielle og Alexander, og sammen utgjør vi Marixander – et kreativt studio som spesialiserer seg på visuelle kunstverk og webdesign. Oppdag våre unike tjenester innen fotografering, maleri og webutvikling, og se hvordan vi kan gi liv til dine visjoner.</p>
+        <div class="buttons-container">
+            <a href="portfolio.html" class="explore-button">Utforsk våre prosjekter</a>
+            <a href="about.html" class="learn-more-button">Les mer om oss</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+    </main>
+
+  <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Om oss</h3>
+                <p>Vi er Marielle og Alexander, teamet bak Marixander <br>– et kreativt studio innen fotografering, maleri og webdesign.</p>
+            </div>
+            <div class="footer-section resources">
+                <h3>Navigasjon</h3>
+                <ul class="footer-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Hjem</a></li>
+                    <li><a href="photography.html"><i class="fas fa-camera"></i> Bilder</a></li>
+                    <li><a href="design.html"><i class="fas fa-paint-brush"></i> Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Kontakt oss</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@marixander.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+47 123 45 678</p>
+                </div>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Følg oss</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+/* Importer font */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Indie+Flower&display=swap');
+
+/* Reset standard margin og padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generell styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 200px;
+}
+
+/* Header-styling med en mer harmonisk gråfarge */
+header {
+    background: linear-gradient(90deg, #b0b0b0, #c0c0c0); /* En jevn gradient som passer bedre med footeren */
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.header-logo-container {
+    max-width: 300px;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.header-logo-container:hover .logo {
+    transform: scale(1.1);
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.menu {
+    list-style: none; /* Fjerner punktene foran menyelementene */
+    display: flex;
+    gap: 25px;
+    position: relative;
+    padding: 0; /* Fjerner eventuelle standardinnrykk */
+}
+
+/* Menyelementer */
+.menu > li > a,
+.menu > li > span {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu > li > a:hover {
+    color: #333; /* Kontrasterende farge ved hover */
+}
+
+/* Dropdown-meny styling */
+.menu li.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.menu li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    list-style: none; /* Fjerner punktene fra dropdown-menyen også */
+}
+
+.dropdown-menu li a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+    color: #007bff;
+}
+
+/* Footer styling med en lys grå farge og mindre tekst */
+footer {
+    background-color: #e0e0e0; /* Lys grå farge for en ren og luftig footer */
+    color: #444; /* Mørk grå tekst for god kontrast mot den lyse bakgrunnen */
+    padding: 40px 20px;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* "Om oss"-seksjon litt til høyre fra venstremargen */
+.footer-section.about {
+    text-align: left;
+    flex-basis: 25%;
+    padding-left: 5px; /* Setter "Om oss" litt nærmere venstremargen */
+    margin-right: auto; /* Forsikrer at "Om oss" står lengst til venstre */
+}
+
+/* Midtre seksjoner av footeren (Navigasjon, Kontakt-info, Sosiale medier) justert mot høyre */
+.footer-section {
+    text-align: left;
+    flex-basis: 25%;
+    padding-left: 30px; /* Justerer de midtre seksjonene mer mot høyre for balanse */
+}
+
+/* Heading-styling */
+.footer-section h3 {
+    font-size: 1.1em; /* Redusert tekststørrelse for heading */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444; /* Mørk grå tekst for heading */
+}
+
+/* Navigasjon-menyen uten punkter */
+.footer-menu {
+    list-style: none; /* Fjerner punktene foran lenkene */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-menu li a {
+    color: #444; /* Mørk grå tekst for å matche resten av footeren */
+    font-size: 0.9em; /* Redusert tekststørrelse for navigasjonslenker */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #000; /* Svart farge ved hover for bedre visuell tilbakemelding */
+}
+
+/* Kontakt-info styling med ikoner ved siden av teksten */
+.footer-section.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 30px; /* Justerer kontakt-info mer mot høyre for balanse */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Avstand mellom ikon og tekst */
+    font-size: 0.9em; /* Redusert tekststørrelse for kontaktinfo */
+    color: #444; /* Mørk grå tekst for kontaktinfo */
+}
+
+.contact-item i {
+    font-size: 1.3em; /* Redusert ikonstørrelse for bedre balanse med mindre tekst */
+    color: #444; /* Mørk grå farge for ikonene */
+}
+
+/* Sosiale medier-seksjon med ikonene over hverandre */
+.footer-section.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 30px;
+}
+
+.footer-section.social-media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-section.social-media ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-section.social-media ul li a {
+    color: #444; /* Mørk grå tekstfarge for sosiale medier-lenker */
+    font-size: 0.9em; /* Redusert tekststørrelse for sosiale medier-lenker */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section.social-media ul li a:hover {
+    color: #000; /* Svart farge ved hover */
+}
+
+.footer-section.social-media ul li a i {
+    font-size: 1.3em; /* Redusert ikonstørrelse for bedre balanse med mindre tekst */
+    margin-right: 8px; /* Avstand mellom ikon og tekst */
+}
+
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+    .header-logo-container {
+        max-width: 200px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-section.social-media ul {
+        align-items: center;
+    }
+}
+
+/* Galleri styling */
+.gallery-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Lysboks styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.close, .prev, .next {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    top: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close {
+    top: 5%;
+    right: 5%;
+}
+
+.prev {
+    left: 10%;
+}
+
+.next {
+    right: 10%;
+}
+/* Side-ved-side layout for bilde og tekst */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.image-container {
+    width: 300px; /* Kvadratisk bilde */
+    height: 300px;
+    margin-right: 30px; /* Avstand mellom bilde og tekst */
+}
+
+.welcome-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Sørger for at bildet fyller kvadratet uten forvrengning */
+    border-radius: 8px; /* Lett avrundede hjørner (valgfritt) */
+}
+
+.text-container {
+    max-width: 600px;
+}
+/* Tjenesteoversikt styling */
+.services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.services-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Justerer avstanden mellom boksene */
+    flex-wrap: nowrap; /* Holder alle boksene på samme linje */
+}
+
+/* Ensartede tjenestebokser */
+.service {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px; /* Fast bredde for boksene */
+    min-height: 300px; /* Ensartet høyde for boksene */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2em;
+    color: #3a5f5c;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.service-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: #ff7e5f;
+}
+
+/* Responsiv justering for mindre skjermer */
+@media (max-width: 768px) {
+    .services-container {
+        flex-wrap: wrap; /* Tillater wrapping på små skjermer */
+        gap: 20px;
+    }
+    .service {
+        width: 100%; /* Tar full bredde på små skjermer */
+    }
+}
+/* Justering for å flytte velkomstmeldingen opp */
+.welcome-section {
+    padding-top: 0px; /* Reduserer topp-padding for å flytte seksjonen opp */
+}
+
+.text-container h1 {
+    margin-top: 0; /* Fjerner eventuell ekstra toppmarg på overskriften */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Hvit bakgrunn */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Generell styling */
+.main-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Galleri-begrensning og scrolling */
+.gallery-container {
+    width: 90%; /* Begrenser galleriet til 90% av visningsområdet */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    margin-left: px; /* Flytt galleriet mot høyre */
+}
+
+.gallery-track {
+    display: inline-flex; /* Holder bildene i én rad */
+    align-items: center;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+.gallery-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 40px; /* Juster hvor mye padding som ønskes på venstre side */
+}
