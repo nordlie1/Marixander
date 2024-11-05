@@ -3,6 +3,7 @@ document.addEventListener('scroll', handleScrollAnimation);
 document.addEventListener('DOMContentLoaded', function() {
     handleScrollAnimation(); // Initialiserer animasjoner for synlige seksjoner
     setupHamburgerMenu(); // Setter opp hamburger-menyen
+    showCookieModal(); // Viser informasjonskapsel-modal ved første innlasting
 });
 
 // Håndterer scroll-animasjoner
@@ -27,12 +28,30 @@ function setupHamburgerMenu() {
         menu.classList.toggle('active');
     });
 }
+
+// Funksjon for å vise informasjonskapsel-modal
+function showCookieModal() {
+    if (!localStorage.getItem("cookieModalClosed")) {
+        const modal = document.getElementById("cookie-info-modal");
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Hindrer scrolling i bakgrunnen
+        modal.focus(); // Setter fokus til modalen
+    }
+}
+
+// Funksjon for å lukke informasjonskapsel-modal og lagre preferansen i localStorage
+function closeCookieInfo() {
+    document.getElementById("cookie-info-modal").style.display = "none";
+    localStorage.setItem("cookieModalClosed", "true");
+    document.body.style.overflow = "auto"; // Tillater scrolling igjen
+}
+
+// Lightbox-funksjoner
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const images = document.querySelectorAll(".gallery-item img");
 let currentIndex = 0;
 
-// Åpne lysboksen og sett riktig bilde
 function openLightbox(index) {
     currentIndex = index;
     updateLightboxImage();
@@ -40,19 +59,16 @@ function openLightbox(index) {
     document.addEventListener("keydown", handleKeyNavigation);
 }
 
-// Oppdater bilde i lysboksen
 function updateLightboxImage() {
     const imageSrc = images[currentIndex].src;
     lightboxImg.src = imageSrc;
 }
 
-// Lukk lysboksen
 function closeLightbox() {
     lightbox.style.display = "none";
     document.removeEventListener("keydown", handleKeyNavigation);
 }
 
-// Håndter tastatur for navigasjon
 function handleKeyNavigation(event) {
     if (event.key === "ArrowRight") {
         showNextImage();
@@ -63,7 +79,6 @@ function handleKeyNavigation(event) {
     }
 }
 
-// Vis neste og forrige bilde
 function showNextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     updateLightboxImage();
@@ -74,41 +89,101 @@ function showPreviousImage() {
     updateLightboxImage();
 }
 
-// Klikk utenfor bildet lukker lysboksen
 lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
         closeLightbox();
     }
 });
 
-// Legg til event listeners på bilder
 images.forEach((img, index) => {
     img.addEventListener("click", () => openLightbox(index));
 });
-function acceptCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Lagre brukerens samtykke i localStorage
-    localStorage.setItem('cookiesAccepted', 'true');
-}
 
-function showCookieInfo() {
-    document.getElementById('cookie-info-modal').style.display = 'block';
-}
+console.log("Nettsiden har lastet!");
+document.addEventListener("DOMContentLoaded", function() {
+    // Sjekk om modalen tidligere er lukket
+    if (!localStorage.getItem("cookieModalClosed")) {
+        const modal = document.getElementById("cookie-info-modal");
+        modal.style.display = "flex"; // Viser modalen
+        document.body.style.overflow = "hidden"; // Hindrer scrolling i bakgrunnen
+    }
+});
 
 function closeCookieInfo() {
-    document.getElementById('cookie-info-modal').style.display = 'none';
+    const modal = document.getElementById("cookie-info-modal");
+    modal.style.display = "none"; // Skjuler modalen
+    localStorage.setItem("cookieModalClosed", "true"); // Lagre lukke-status
+    document.body.style.overflow = "auto"; // Tillater scrolling igjen
+}
+document.addEventListener("DOMContentLoaded", function() {
+    // Sjekk om brukeren har lukket informasjonskapsel-modalen før
+    if (!localStorage.getItem("cookieModalClosed")) {
+        const modal = document.getElementById("cookie-info-modal");
+        modal.style.display = "flex"; // Viser modalen
+        document.body.style.overflow = "hidden"; // Hindrer scrolling av bakgrunnen
+    }
+});
+
+// Funksjon for å lukke modalen og lagre preferansen i localStorage
+function closeCookieInfo() {
+    const modal = document.getElementById("cookie-info-modal");
+    modal.style.display = "none"; // Skjuler modalen
+    localStorage.setItem("cookieModalClosed", "true"); // Lagrer at modalen er lukket
+    document.body.style.overflow = "auto"; // Tillater scrolling igjen
+}
+document.addEventListener("DOMContentLoaded", function() {
+    // Vis modalen hvis brukeren ikke har samtykket
+    if (!localStorage.getItem("cookiesAccepted")) {
+        const modal = document.getElementById("cookie-info-modal");
+        modal.style.display = "flex"; // Viser modalen
+        document.body.style.overflow = "hidden"; // Hindrer scrolling av bakgrunnen
+    }
+});
+
+function closeCookieInfo() {
+    const modal = document.getElementById("cookie-info-modal");
+    modal.style.display = "none"; // Skjuler modalen
+    document.body.style.overflow = "auto"; // Tillater scrolling igjen
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    }
-});
-localStorage.setItem('cookiesAccepted', 'true');
-document.addEventListener('DOMContentLoaded', function() {
-    if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    }
-});
-console.log("Nettsiden har lastet!");
+// Funksjon for å godta informasjonskapsler og lagre preferansen i localStorage
+function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true"); // Lagrer at brukeren har samtykket
+    closeCookieInfo(); // Lukker modalen
+}
+const positions = {};
 
+function scrollGallery(galleryId, direction) {
+    const gallery = document.getElementById(galleryId);
+    const track = gallery.querySelector('.gallery-track');
+    const itemWidth = gallery.clientWidth;
+
+    // Lagre posisjon om ikke eksisterer
+    if (!positions[galleryId]) {
+        positions[galleryId] = 0;
+    }
+
+    // Oppdater posisjon
+    positions[galleryId] += direction * itemWidth;
+
+    // Begrens til start og slutt
+    const maxTranslateX = -(track.scrollWidth - gallery.clientWidth);
+    positions[galleryId] = Math.min(0, Math.max(positions[galleryId], maxTranslateX));
+
+    // Bruk transform for å flytte sporet
+    track.style.transform = `translateX(${positions[galleryId]}px)`;
+}
+let currentGallery = 'malerier'; // Start med 'malerier'
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") {
+        scrollGallery(currentGallery, 1); // Høyrepil blar fremover
+    } else if (event.key === "ArrowLeft") {
+        scrollGallery(currentGallery, -1); // Venstrepil blar bakover
+    }
+});
+
+// Funksjon for å endre aktivt galleri (valgfritt)
+function setActiveGallery(galleryId) {
+    currentGallery = galleryId;
+}

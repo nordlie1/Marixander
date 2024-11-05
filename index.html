@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=2.0, user-scalable=no">
 </head>
-
-</head>
 <body>
 
     <!-- Header med logo og meny -->
@@ -100,6 +98,29 @@
 
 </main>
 
+<!-- Informasjonskapsler-modal -->
+<div id="cookie-info-modal">
+    <div id="cookie-modal-content">
+        <h2>Informasjon om informasjonskapsler</h2>
+        <p>Vi bruker informasjonskapsler (cookies) for å forbedre brukeropplevelsen din på nettsiden. Ved å fortsette å bruke denne nettsiden samtykker du til vår bruk av informasjonskapsler.</p>
+        <br>
+        <h3>Hva er informasjonskapsler?</h3>
+        <p>En informasjonskapsel er en liten tekstfil som lagres på enheten din når du besøker et nettsted. Den bidrar til at vi kan tilpasse innholdet, huske innstillingene dine og forstå hvordan nettstedet vårt brukes.</p>
+        <br>
+        <h3>Typer informasjonskapsler vi bruker</h3>
+        <ul>
+            <li><strong>Nødvendige informasjonskapsler:</strong> Disse er avgjørende for at nettstedet skal fungere og kan ikke deaktiveres.</li>
+            <li><strong>Ytelse og analyse:</strong> Vi bruker disse for å få innsikt i hvordan besøkende bruker nettstedet vårt, slik at vi kan forbedre det.</li>
+            <li><strong>Funksjonelle informasjonskapsler:</strong> Disse lagrer dine innstillinger og preferanser for å gi en bedre opplevelse.</li>
+        </ul>
+        <p>Du kan når som helst endre innstillingene for informasjonskapsler i nettleseren din.</p>
+        <button onclick="acceptCookies()">Godta</button>
+        <button onclick="closeCookieInfo()">Lukk</button>
+    </div>
+</div>
+
+
+
 
     <footer>
         <div class="footer-content">
@@ -137,40 +158,6 @@
     </footer>
 
     <script src="script.js"></script>
-</div>
-
-<!-- Cookie banner -->
-<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; padding: 15px; text-align: center; z-index: 1000;">
-    Dette nettstedet bruker informasjonskapsler for å sikre deg en best mulig opplevelse.
-    <a href="#" onclick="showCookieInfo()" style="color: #00f;">Les mer</a>
-    <button onclick="acceptCookies()" style="background-color: #4CAF50; color: white; padding: 10px; margin-left: 20px; border: none; cursor: pointer;">Aksepter</button>
-</div>
-
-<!-- Informasjonskapsler-modal -->
-<div id="cookie-info-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 40px; z-index: 1001; overflow: auto;">
-    <div style="background-color: #fff; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 8px;">
-        <h2>Informasjon om informasjonskapsler</h2>
-        <p>En informasjonskapsel er en liten tekstfil som lagres på enheten din når du besøker et nettsted. Informasjonskapsler hjelper oss å gi deg en bedre brukeropplevelse ved å huske preferanser og samle inn informasjon om hvordan du bruker nettstedet.</p>
-        <h3>Hvilke informasjonskapsler bruker vi?</h3>
-        <ul>
-            <li><strong>Nødvendige informasjonskapsler:</strong> Disse er essensielle for at nettstedet skal fungere, for eksempel for å huske varer i handlekurven din.</li>
-            <li><strong>Ytelses- og analyse-cookies:</strong> Vi bruker analyseverktøy som Google Analytics for å forstå hvordan besøkende bruker nettstedet vårt og for å forbedre brukeropplevelsen.</li>
-            <li><strong>Funksjonelle informasjonskapsler:</strong> Disse husker valg du har gjort, som språkinnstillinger og region, for å forbedre opplevelsen din.</li>
-            <li><strong>Markedsførings- og tredjeparts-cookies:</strong> Disse brukes for å vise deg relevante annonser på andre nettsteder, basert på hvordan du har brukt nettstedet vårt.</li>
-        </ul>
-        <h3>Hvordan kan du administrere informasjonskapsler?</h3>
-        <p>Du kan til enhver tid deaktivere eller slette informasjonskapsler ved å gå inn i innstillingene for nettleseren din. Slik gjør du det i noen av de mest brukte nettleserne:</p>
-        <ul>
-            <li><strong>Google Chrome:</strong> Gå til "Innstillinger" > "Personvern og sikkerhet" > "Informasjonskapsler og andre nettsteddata".</li>
-            <li><strong>Safari:</strong> Gå til "Innstillinger" > "Personvern" for å administrere hvilke cookies som er lagret.</li>
-            <li><strong>Mozilla Firefox:</strong> Gå til "Alternativer" > "Personvern og sikkerhet".</li>
-        </ul>
-        <h3>Kontakt oss</h3>
-        <p>Hvis du har spørsmål om vår bruk av informasjonskapsler, kan du kontakte oss på <a href="mailto:info@marixander.com">info@marixander.com</a>.</p>
-        <button onclick="closeCookieInfo()" style="background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; margin-top: 20px;">Lukk</button>
-    </div>
-
-
 
 </body>
 </html>

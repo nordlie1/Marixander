@@ -609,3 +609,191 @@ body {
         font-size: 1.3em;
     }
 }
+<style>
+    /* Større modal for mindre skjermer */
+    @media (max-width: 768px) {
+        #cookie-modal-content {
+            max-width: 90%;
+            font-size: 1.1em; /* Større tekst for bedre lesbarhet */
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #cookie-modal-content {
+            max-width: 95%;
+            font-size: 1.2em;
+        }
+    }
+</style>
+/* Fullskjerm modal */
+#cookie-info-modal {
+    display: none; /* Skjult som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent bakgrunn */
+    color: white;
+    z-index: 9999; /* Høyeste lag for å sikre at modalen står i forgrunnen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Innholdet i modalen */
+#cookie-modal-content {
+    background-color: #fff;
+    color: #333;
+    max-width: 80%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+/* Fullskjerm modal */
+#cookie-info-modal {
+    display: none; /* Skjult som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent bakgrunn */
+    color: white;
+    z-index: 9999; /* Høyeste lag for å sikre at modalen står i forgrunnen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* Innholdet i modalen */
+#cookie-modal-content {
+    background-color: #fff;
+    color: #333;
+    max-width: 80%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Knappestil */
+#cookie-modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#cookie-modal-content button:hover {
+    background-color: #45a049;
+}
+/* Stil for knappene i modalen */
+#cookie-modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#cookie-modal-content button:hover {
+    background-color: #45a049;
+}
+/* Fjerner punktene foran listen i informasjonskapsel-modalen */
+#cookie-modal-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#cookie-modal-content ul li {
+    margin-bottom: 8px; /* Gir litt mellomrom mellom punktene */
+}
+.services-container {
+    display: flex;
+    justify-content: space-between; /* Fordeler elementene med jevn avstand */
+    flex-wrap: nowrap; /* Hindrer at elementene brytes til neste linje */
+}
+
+.service {
+    width: 23%; /* Justerer bredden slik at alle fire passer på én linje */
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0; /* Fjerner margin for å sikre lik avstand */
+}
+.gallery-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.gallery {
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.gallery-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Sørg for at knappene er over galleriet */
+    transition: background-color 0.3s ease;
+}
+
+.gallery-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Mørkere farge ved hover */
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
