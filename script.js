@@ -100,57 +100,8 @@ images.forEach((img, index) => {
 });
 
 console.log("Nettsiden har lastet!");
-document.addEventListener("DOMContentLoaded", function() {
-    // Sjekk om modalen tidligere er lukket
-    if (!localStorage.getItem("cookieModalClosed")) {
-        const modal = document.getElementById("cookie-info-modal");
-        modal.style.display = "flex"; // Viser modalen
-        document.body.style.overflow = "hidden"; // Hindrer scrolling i bakgrunnen
-    }
-});
 
-function closeCookieInfo() {
-    const modal = document.getElementById("cookie-info-modal");
-    modal.style.display = "none"; // Skjuler modalen
-    localStorage.setItem("cookieModalClosed", "true"); // Lagre lukke-status
-    document.body.style.overflow = "auto"; // Tillater scrolling igjen
-}
-document.addEventListener("DOMContentLoaded", function() {
-    // Sjekk om brukeren har lukket informasjonskapsel-modalen før
-    if (!localStorage.getItem("cookieModalClosed")) {
-        const modal = document.getElementById("cookie-info-modal");
-        modal.style.display = "flex"; // Viser modalen
-        document.body.style.overflow = "hidden"; // Hindrer scrolling av bakgrunnen
-    }
-});
 
-// Funksjon for å lukke modalen og lagre preferansen i localStorage
-function closeCookieInfo() {
-    const modal = document.getElementById("cookie-info-modal");
-    modal.style.display = "none"; // Skjuler modalen
-    localStorage.setItem("cookieModalClosed", "true"); // Lagrer at modalen er lukket
-    document.body.style.overflow = "auto"; // Tillater scrolling igjen
-}
-document.addEventListener("DOMContentLoaded", function() {
-    // Vis modalen hvis brukeren ikke har samtykket
-    if (!localStorage.getItem("cookiesAccepted")) {
-        const modal = document.getElementById("cookie-info-modal");
-        modal.style.display = "flex"; // Viser modalen
-        document.body.style.overflow = "hidden"; // Hindrer scrolling av bakgrunnen
-    }
-});
-
-function closeCookieInfo() {
-    const modal = document.getElementById("cookie-info-modal");
-    modal.style.display = "none"; // Skjuler modalen
-    document.body.style.overflow = "auto"; // Tillater scrolling igjen
-}
-
-// Funksjon for å godta informasjonskapsler og lagre preferansen i localStorage
-function acceptCookies() {
-    localStorage.setItem("cookiesAccepted", "true"); // Lagrer at brukeren har samtykket
-    closeCookieInfo(); // Lukker modalen
-}
 const positions = {};
 
 function scrollGallery(galleryId, direction) {
@@ -173,17 +124,5 @@ function scrollGallery(galleryId, direction) {
     // Bruk transform for å flytte sporet
     track.style.transform = `translateX(${positions[galleryId]}px)`;
 }
-let currentGallery = 'malerier'; // Start med 'malerier'
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowRight") {
-        scrollGallery(currentGallery, 1); // Høyrepil blar fremover
-    } else if (event.key === "ArrowLeft") {
-        scrollGallery(currentGallery, -1); // Venstrepil blar bakover
-    }
-});
 
-// Funksjon for å endre aktivt galleri (valgfritt)
-function setActiveGallery(galleryId) {
-    currentGallery = galleryId;
-}
