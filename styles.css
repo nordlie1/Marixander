@@ -1,5 +1,4 @@
-/* Importer font */
-
+/* Importer font kun for meny */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Indie+Flower&display=swap');
 
 /* Reset standard margin og padding */
@@ -11,23 +10,26 @@
 
 /* Generell styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif; /* Standard sans-serif font */
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 16px;
 }
 
+/* Flytt hovedinnhold ned fra header */
 main {
     flex: 1;
-    padding: 200px;
+    padding: 40px;
+    margin-top: 60px; /* Juster denne verdien for ønsket avstand fra header */
 }
 
-/* Header-styling med en mer harmonisk gråfarge */
+/* Header styling */
 header {
-    background: linear-gradient(90deg, #b0b0b0, #c0c0c0); /* En jevn gradient som passer bedre med footeren */
+    background: linear-gradient(90deg, #b0b0b0, #c0c0c0);
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -37,7 +39,7 @@ header {
 }
 
 .header-logo-container {
-    max-width: 300px;
+    max-width: 400px;
 }
 
 .logo {
@@ -61,27 +63,27 @@ header {
 }
 
 .menu {
-    list-style: none; /* Fjerner punktene foran menyelementene */
+    list-style: none;
     display: flex;
     gap: 25px;
-    position: relative;
-    padding: 0; /* Fjerner eventuelle standardinnrykk */
+    padding: 0;
 }
 
-/* Menyelementer */
+/* Meny stiler med spesifikk font */
 .menu > li > a,
 .menu > li > span {
+    font-family: 'DM Serif Text', serif; /* Kun menyen bruker importert font */
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 23px;
     padding: 12px 18px;
     border-radius: 6px;
-    position: relative;
     transition: background 0.3s ease, color 0.3s ease;
+
 }
 
 .menu > li > a:hover {
-    color: #333; /* Kontrasterende farge ved hover */
+    color: #333;
 }
 
 /* Dropdown-meny styling */
@@ -99,18 +101,16 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
+    list-style: none; /* Fjerner punktene foran dropdown-menyen */
+
 }
 
 .menu li.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.dropdown-menu li {
-    width: 100%;
-    list-style: none; /* Fjerner punktene fra dropdown-menyen også */
-}
-
 .dropdown-menu li a {
+    font-family: Arial, sans-serif; /* Standard font for dropdown-meny */
     color: #333;
     padding: 10px 15px;
     display: block;
@@ -125,12 +125,14 @@ header {
     color: #007bff;
 }
 
-/* Footer styling med en lys grå farge og mindre tekst */
+/* Footer styling */
 footer {
-    background-color: #e0e0e0; /* Lys grå farge for en ren og luftig footer */
-    color: #444; /* Mørk grå tekst for god kontrast mot den lyse bakgrunnen */
+    width: 100%;
+    background-color: #e0e0e0;
+    color: #444;
     padding: 40px 20px;
-    margin-top: auto;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Flytter footeren til bunnen */
 }
 
 .footer-content {
@@ -139,83 +141,26 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 20px;
 }
 
-/* "Om oss"-seksjon litt til høyre fra venstremargen */
-.footer-section.about {
-    text-align: left;
-    flex-basis: 25%;
-    padding-left: 5px; /* Setter "Om oss" litt nærmere venstremargen */
-    margin-right: auto; /* Forsikrer at "Om oss" står lengst til venstre */
-}
-
-/* Midtre seksjoner av footeren (Navigasjon, Kontakt-info, Sosiale medier) justert mot høyre */
+/* Footer-seksjonene */
 .footer-section {
-    text-align: left;
-    flex-basis: 25%;
-    padding-left: 30px; /* Justerer de midtre seksjonene mer mot høyre for balanse */
+    flex: 1;
+    min-width: 200px;
+    color: #444;
+    padding: 20px;
 }
 
-/* Heading-styling */
 .footer-section h3 {
-    font-size: 1.1em; /* Redusert tekststørrelse for heading */
+    font-size: 1.1em;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #444; /* Mørk grå tekst for heading */
 }
 
-/* Navigasjon-menyen uten punkter */
-.footer-menu {
-    list-style: none; /* Fjerner punktene foran lenkene */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-menu li a {
-    color: #444; /* Mørk grå tekst for å matche resten av footeren */
-    font-size: 0.9em; /* Redusert tekststørrelse for navigasjonslenker */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-menu li a:hover {
-    color: #000; /* Svart farge ved hover for bedre visuell tilbakemelding */
-}
-
-/* Kontakt-info styling med ikoner ved siden av teksten */
-.footer-section.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 30px; /* Justerer kontakt-info mer mot høyre for balanse */
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Avstand mellom ikon og tekst */
-    font-size: 0.9em; /* Redusert tekststørrelse for kontaktinfo */
-    color: #444; /* Mørk grå tekst for kontaktinfo */
-}
-
-.contact-item i {
-    font-size: 1.3em; /* Redusert ikonstørrelse for bedre balanse med mindre tekst */
-    color: #444; /* Mørk grå farge for ikonene */
-}
-
-/* Sosiale medier-seksjon med ikonene over hverandre */
-.footer-section.social-media {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 30px;
-}
-
-.footer-section.social-media ul {
+.footer-menu,
+.footer-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -224,26 +169,130 @@ footer {
     gap: 8px;
 }
 
-.footer-section.social-media ul li {
+.footer-menu li a,
+.footer-section a {
+    color: #444;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover {
+    color: #000;
+}
+
+/* Galleri styling */
+.gallery-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Fem kolonner */
+    gap: 20px;
+    max-width: 1600px; /* Gir plass til fem bilder på rad */
+    margin: 0 auto;
+}
+
+/* Galleri-element styling */
+.gallery-item {
+    width: 300px; /* Fast bredde */
+    height: 300px; /* Fast høyde */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Fancy hover-effekt */
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.gallery-item:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    width: 800px; /* Fast bredde */
+    height: 800px; /* Fast høyde */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.footer-section.social-media ul li a {
-    color: #444; /* Mørk grå tekstfarge for sosiale medier-lenker */
-    font-size: 0.9em; /* Redusert tekststørrelse for sosiale medier-lenker */
-    text-decoration: none;
-    transition: color 0.3s;
+.lightbox-content img {
+    width: 100%; /* Tilpass bildet til lightbox-innholdets størrelse */
+    height: 100%;
+    object-fit: cover; /* Dekker hele rammen med bildet */
 }
 
-.footer-section.social-media ul li a:hover {
-    color: #000; /* Svart farge ved hover */
+/* Navigasjonspiler i Lightbox */
+.lightbox .close, .lightbox .prev, .lightbox .next {
+    position: absolute;
+    font-size: 2em;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }
 
-.footer-section.social-media ul li a i {
-    font-size: 1.3em; /* Redusert ikonstørrelse for bedre balanse med mindre tekst */
-    margin-right: 8px; /* Avstand mellom ikon og tekst */
+.lightbox .close {
+    top: 10%;
+    right: 10%;
+    transform: none;
+    font-size: 1.5em;
 }
+
+.lightbox .prev {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.lightbox .next {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+
+/* Våre tjenester styling */
+.services-section {
+    padding: 100px 20px;
+    text-align: center;
+    margin: 100px
+}
+
+
 
 
 /* Responsiv styling */
@@ -256,452 +305,417 @@ footer {
         display: none;
     }
 
+    .services-container {
+        flex-wrap: wrap;
+    }
+
+    .service {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .gallery-item {
+        width: 100px;
+        height: 100px;
+    }
+} /* <--- Sørg for å avslutte her */
+
+.footer-section {
+    flex: 1;
+    min-width: 1px;
+    padding: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.footer-section p, .footer-section span, .footer-menu a {
+    color: #444;
+    font-size: 0.9em;
+}
+
+.footer-menu,
+.social-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li,
+.social-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu li a,
+.social-menu li a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover,
+.social-menu li a:hover {
+    color: #007bff;
+}
+
+/* Styling for kontaktinfo ikoner */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Sosiale medier styling */
+.social-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-menu li a i {
+    font-size: 1.3em;
+    color: #444;
+}
+
+/* Responsiv justering for footer */
+@media (max-width: 768px) {
     .footer-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
-
     .footer-section {
-        min-width: 100%;
         margin-bottom: 20px;
     }
-
-    .footer-section.social-media ul {
-        align-items: center;
-    }
 }
 
-/* Galleri styling */
-.gallery-section {
-    padding: 40px;
-    text-align: center;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-text {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px;
-    font-size: 0.9em;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-/* Lysboks styling */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.lightbox-content {
-    max-width: 80%;
-    max-height: 80%;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-}
-
-.close, .prev, .next {
-    position: absolute;
-    color: white;
-    font-size: 2em;
-    top: 50%;
-    cursor: pointer;
-    user-select: none;
-}
-
-.close {
-    top: 5%;
-    right: 5%;
-}
-
-.prev {
-    left: 10%;
-}
-
-.next {
-    right: 10%;
-}
-/* Side-ved-side layout for bilde og tekst */
 .welcome-section {
     display: flex;
     align-items: center;
-    padding: 50px;
+    gap: 10px; /* Avstand mellom tekst og bilder */
+    padding: 100px 50px;
+    background-color: #ffffff;
+    border-radius: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Sentrerer seksjonen */
+}
+
+/* Tekstcontainer styling for venstre side */
+.text-container {
+    max-width: 100%; /* Justerer bredden på teksten */
+    margin-right: 200%; /* Skyver tekstcontainer mot midten */
+    text-align: left;
+    margin: 50px
+
+
+}
+
+.image-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.buttons-container .explore-button:hover {
+    background-color: #0056b3;
+}
+/* Justering av bildeseksjonen */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+
+
+
+.buttons-container .explore-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Wrapper for tekst og bilder på samme linje */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+.text-container h1 {
+    font-size: 2.5em;
+    font-family: 'DM Serif Text', serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.text-container p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Bildecontainer styling */
+.image-section {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .image-container {
-    width: 300px; /* Kvadratisk bilde */
-    height: 300px;
-    margin-right: 30px; /* Avstand mellom bilde og tekst */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1px;
 }
 
-.welcome-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Sørger for at bildet fyller kvadratet uten forvrengning */
-    border-radius: 8px; /* Lett avrundede hjørner (valgfritt) */
-}
 
-.text-container {
-    max-width: 600px;
-}
-/* Tjenesteoversikt styling */
-.services-section {
-    padding: 60px 20px;
+/* Tekst under bildene */
+.text-below-images {
     text-align: center;
-    background-color: #ffffff;
+    margin-top: 1px;
 }
 
-.services-section h2 {
-    font-size: 2em;
+.artwork-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.4em;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
 }
 
+/* Knappstil for sentrert knapp */
+.buttons-container {
+    display: flex;
+    justify-content: center
+    ;
+    margin-top: -20px; /* Gir avstand fra innholdet over */
+}
+
+.buttons-container .explore-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-top: -20px; /* Flytter knappen nærmere innholdet */
+}
+
+/* Knapp-styling */
+.fancy-button {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover-effekt for knappen */
+.fancy-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, #0056b3, #003f8a);
+}
+/* Flytter opp seksjonsoverskriften */
+.services-section h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Justering av tjenestekort for lik høyde */
 .services-container {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    gap: 20px; /* Justerer avstanden mellom boksene */
-    flex-wrap: nowrap; /* Holder alle boksene på samme linje */
+    flex-wrap: wrap;
 }
 
-/* Ensartede tjenestebokser */
+/* Stil for hvert tjenestekort */
 .service {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    width: 220px; /* Fast bredde for boksene */
-    min-height: 300px; /* Ensartet høyde for boksene */
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px; /* Fast bredde for lik størrelse */
+    min-height: 350px; /* Sikrer lik høyde for kortene */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease;
 }
 
-.service:hover {
-    transform: translateY(-5px);
-}
 
-.service-icon {
+
+.service i.service-icon {
     font-size: 2em;
-    color: #3a5f5c;
+    color: #FFA500;
     margin-bottom: 15px;
+
 }
 
-.service h3 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.service-link {
-    color: #007bff;
-    text-decoration: none;
+/* Stil for "Sjekk vårt galleri" knappen */
+.fancy-gallery-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333333; /* Mørk bakgrunn */
+    color: #ffffff;
     font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: -10px; /* Avstand mellom teksten og knappen */
+    transform: translateX(20px); /* Flytter knappen ca. 2 cm til høyre */
+}
+
+/* Hover-effekt for knappen */
+.fancy-gallery-button:hover {
+    background-color: #444444; /* Lysere grå ved hover */
+}
+
+
+
+
+.fancy-gallery-button:hover {
+    background-color: #FFA500; /* Oransje/gul hover-effekt */
+    color: #333333; /* Bytter til mørk tekstfarge for kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* Stil for "Les mer" knappene i Våre Tjenester */
+.fancy-service-button, .fancy-gallery-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333333; /* Mørk bakgrunn */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fancy-service-button:hover, .fancy-gallery-button:hover {
+    background-color: #FFA500; /* Oransje/gul hover-effekt */
+    color: #333333; /* Bytter til mørk tekstfarge for kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Stil for ikonene over tjenestene */
+.service-icon {
+    font-size: 2.5em;
+    color: #FFA500; /* Oransje/gul farge som matcher knappene */
+    margin-bottom: 10px;
     transition: color 0.3s ease;
 }
 
-.service-link:hover {
-    color: #ff7e5f;
+.service-icon:hover {
+    color: #333333; /* Endrer til mørkere farge ved hover */
 }
 
-/* Responsiv justering for mindre skjermer */
-@media (max-width: 768px) {
-    .services-container {
-        flex-wrap: wrap; /* Tillater wrapping på små skjermer */
-        gap: 20px;
-    }
-    .service {
-        width: 100%; /* Tar full bredde på små skjermer */
-    }
-}
-/* Justering for å flytte velkomstmeldingen opp */
-.welcome-section {
-    padding-top: 0px; /* Reduserer topp-padding for å flytte seksjonen opp */
-}
-
-.text-container h1 {
-    margin-top: 0; /* Fjerner eventuell ekstra toppmarg på overskriften */
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Hvit bakgrunn */
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Generell styling */
-.main-gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.gallery-section h2 {
+/* Tjenester-seksjonen styling */
+.services-section {
     text-align: center;
-    margin-bottom: 15px;
+    padding: 60px 20px;
 }
-
-/* Galleri-begrensning og scrolling */
-.gallery-container {
-    width: 90%; /* Begrenser galleriet til 90% av visningsområdet */
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    margin-left: px; /* Flytt galleriet mot høyre */
-}
-
-.gallery-track {
-    display: inline-flex; /* Holder bildene i én rad */
-    align-items: center;
-}
-
-.gallery-item {
-    flex: 0 0 auto;
-    width: 250px;
-    height: 250px;
-    margin-right: 10px;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-}
-.gallery-container {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding-left: 40px; /* Juster hvor mye padding som ønskes på venstre side */
-}
-/* Standard desktopvisning (større skjermer) */
-.gallery-container {
-    width: 90%; /* Bruker en bredde som fungerer for desktop */
-    overflow: hidden;
-}
-
-/* Mobilvisning: Skjermbredde mindre enn 768px (tablets og mobil) */
-@media (max-width: 768px) {
-    .gallery-container {
-        width: 100%; /* Full bredde for mobil */
-        margin-left: 0; /* Fjern ekstra margin for å sentrere galleriet */
-        padding: 0 10px; /* Litt padding for å unngå at innholdet går helt til kanten */
-    }
-
-    .gallery-item {
-        width: 100px; /* Reduserer bredden på bilder på mobil */
-        height: 100px;
-        margin-right: 8px; /* Mindre mellomrom mellom bilder */
-    }
-
-    h2 {
-        font-size: 1.5em; /* Justerer fontstørrelsen for titler på mobil */
-    }
-}
-
-/* Ekstremt små skjermer: Skjermbredde mindre enn 480px */
-@media (max-width: 480px) {
-    .gallery-item {
-        width: 80px; /* Reduserer bildestørrelsen ytterligere på veldig små skjermer */
-        height: 80px;
-    }
-
-    h2 {
-        font-size: 1.3em; /* Reduserer fontstørrelsen ytterligere */
-        padding: 10px;
-    }
-}
-/* Standard desktopvisning */
-body {
-    font-size: 16px; /* Grunnstørrelse på tekst */
-}
-
-/* For mobilskjermer opp til 768px */
-@media (max-width: 768px) {
-    body {
-        font-size: 12px; /* Justerer tekststørrelsen ned på mobil */
-    }
-
-    .gallery-container {
-        width: 100%; /* Bruker hele skjermbredden på mobil */
-        padding: 0 10px;
-    }
-
-    .gallery-item {
-        width: 100px; /* Reduserer bildestørrelsen */
-        height: 100px;
-    }
-
-    h2 {
-        font-size: 1.5em; /* Justerer overskriftsstørrelse på mobil */
-    }
-}
-
-/* For veldig små skjermer (opp til 480px) */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px; /* Enda mindre tekst for små skjermer */
-    }
-
-    .gallery-item {
-        width: 200px;
-        height: 200px;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-}
-<style>
-    /* Større modal for mindre skjermer */
-    @media (max-width: 768px) {
-        #cookie-modal-content {
-            max-width: 90%;
-            font-size: 1.1em; /* Større tekst for bedre lesbarhet */
-            padding: 20px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        #cookie-modal-content {
-            max-width: 95%;
-            font-size: 1.2em;
-        }
-    }
-</style>
 
 .services-container {
     display: flex;
-    justify-content: space-between; /* Fordeler elementene med jevn avstand */
-    flex-wrap: nowrap; /* Hindrer at elementene brytes til neste linje */
+    justify-content: center;
+    gap: 30px;
 }
 
 .service {
-    width: 23%; /* Justerer bredden slik at alle fire passer på én linje */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-sizing: border-box;
-    margin: 0; /* Fjerner margin for å sikre lik avstand */
-}
-.gallery-container {
-    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    height: 400px; /* Ens høyde */
 }
 
-.gallery-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+/* Ikon-stil */
+.service-icon {
+    font-size: 2em;
+    color: #FFA500; /* Oransje farge på ikonene */
+    margin-bottom: 15px;
 }
 
-.left-btn {
-    left: 0;
+/* Tjenesteoverskrift */
+.service h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.right-btn {
-    right: 0;
+/* Knapp-stil for "Les mer" */
+.fancy-service-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: auto; /* Sørger for at knappen plasseres nederst */
 }
 
-.gallery {
-    overflow: hidden;
-    width: 100%;
-}
-
-.gallery-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.gallery-item {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-.gallery-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Sørg for at knappene er over galleriet */
-    transition: background-color 0.3s ease;
-}
-
-.gallery-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Mørkere farge ved hover */
-}
-
-.left-btn {
-    left: 0;
-}
-
-.right-btn {
-    right: 0;
+.fancy-service-button:hover {
+    background-color: #444444;
+    color: #FFA500; /* Oransje farge ved hover */
 }

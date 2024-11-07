@@ -14,7 +14,9 @@
     <!-- Header med logo og meny -->
     <header>
         <div class="header-logo-container">
+                 <a href="index.html"> <!-- Legger til lenken her -->
             <img src="https://imgur.com/vZD4UrJ.png" alt="Marixander Logo" class="logo">
+                    </a>
         </div>
         <nav class="navbar">
             <ul class="menu">
@@ -49,60 +51,55 @@
     <section class="gallery-section">
         <h2>Malerier</h2>
         <div class="gallery-container">
-            <button class="gallery-btn left-btn" onclick="scrollGallery('malerier', -1)">&#9664;</button>
-            <div class="gallery" id="malerier">
-                <div class="gallery-track">
-                       <div class="gallery-item"><img src="https://imgur.com/VNpYjhD.jpg" alt="Maleri 1"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/cvVmOem.jpg" alt="Maleri 2"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/KZnanAN.jpg" alt="Maleri 3"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/VVGCG3i.jpg" alt="Maleri 4"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/pM15Xrb.jpg" alt="Maleri 5"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/xo3Fvru.jpg" alt="Maleri 6"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/uqdo7Ep.jpg" alt="Maleri 7"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/e0OBa93.jpg" alt="Maleri 8"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/qD3t0UI.jpg" alt="Maleri 9"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/2zqg5uY.jpg" alt="Maleri 10"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/43WOeCk.jpg" alt="Maleri 11"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/WF68DKX.jpg" alt="Maleri 12"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/dNCTues.jpg" alt="Maleri 13"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/a9rNSvR.jpg" alt="Maleri 14"></div>
-                </div>
-            </div>
-            <button class="gallery-btn right-btn" onclick="scrollGallery('malerier', 1)">&#9654;</button>
-        </div>
-    </section>
-
-    <!-- Fotografier seksjon -->
-    <section class="gallery-section">
-        <h2>Fotografier</h2>
-        <div class="gallery-container">
-            <button class="gallery-btn left-btn" onclick="scrollGallery('fotografier', -1)">&#9664;</button>
-            <div class="gallery" id="fotografier">
-                <div class="gallery-track">
-                     <div class="gallery-item"><img src="https://imgur.com/CREFZPn.jpg" alt="Fotografi 1"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/Kk3fjV3.jpg" alt="Fotografi 2"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/Yc9jdwL.jpg" alt="Fotografi 3"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/UzksEZN.jpg" alt="Fotografi 4"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/qKLUQK8.jpg" alt="Fotografi 5"></div>
-                    <div class="gallery-item"><img src="https://imgur.com/G2nUXva.jpg" alt="Fotografi 6"></div>
-                </div>
-            </div>
-            <button class="gallery-btn right-btn" onclick="scrollGallery('fotografier', 1)">&#9654;</button>
+            <div class="gallery-item"><img src="https://imgur.com/VNpYjhD.jpg" alt="Maleri 1"></div>
+            <div class="gallery-item"><img src="https://imgur.com/cvVmOem.jpg" alt="Maleri 2"></div>
+            <div class="gallery-item"><img src="https://imgur.com/KZnanAN.jpg" alt="Maleri 3"></div>
+            <div class="gallery-item"><img src="https://imgur.com/VVGCG3i.jpg" alt="Maleri 4"></div>
+            <div class="gallery-item"><img src="https://imgur.com/pM15Xrb.jpg" alt="Maleri 5"></div>
+            <div class="gallery-item"><img src="https://imgur.com/xo3Fvru.jpg" alt="Maleri 6"></div>
+            <div class="gallery-item"><img src="https://imgur.com/uqdo7Ep.jpg" alt="Maleri 7"></div>
+            <div class="gallery-item"><img src="https://imgur.com/e0OBa93.jpg" alt="Maleri 8"></div>
+            <div class="gallery-item"><img src="https://imgur.com/qD3t0UI.jpg" alt="Maleri 9"></div>
+            <div class="gallery-item"><img src="https://imgur.com/2zqg5uY.jpg" alt="Maleri 10"></div>
+            <div class="gallery-item"><img src="https://imgur.com/43WOeCk.jpg" alt="Maleri 11"></div>
+            <div class="gallery-item"><img src="https://imgur.com/WF68DKX.jpg" alt="Maleri 12"></div>
+            <div class="gallery-item"><img src="https://imgur.com/dNCTues.jpg" alt="Maleri 13"></div>
+            <div class="gallery-item"><img src="https://imgur.com/a9rNSvR.jpg" alt="Maleri 14"></div>
         </div>
     </section>
 </main>
 
 
 
+    <!-- Lightbox-modal for å vise bildene i full størrelse -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span> <!-- Lukkeknapp -->
+    <span class="prev" onclick="showPreviousImage()">&#10094;</span> <!-- Venstre pil -->
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Forstørret bilde">
+    </div>
+    <span class="next" onclick="showNextImage()">&#10095;</span> <!-- Høyre pil -->
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Lysboks for forstørrelse av bilder -->
-    <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightboxImg" src="" alt="Forstørret bilde">
-        <span class="prev" onclick="showPreviousImage()">&#10094;</span>
-        <span class="next" onclick="showNextImage()">&#10095;</span>
-    </div>
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="showPreviousImage()">&#10094;</span> <!-- Venstre pil -->
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Forstørret bilde">
+    <span class="next" onclick="showNextImage()">&#10095;</span> <!-- Høyre pil -->
+</div>
+
 
 
 

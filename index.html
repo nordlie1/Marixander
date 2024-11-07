@@ -6,14 +6,15 @@
     <title>Marixander</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=2.0, user-scalable=no">
 </head>
 <body>
 
-    <!-- Header med logo og meny -->
+    <!-- Header med full bredde øverst -->
     <header>
         <div class="header-logo-container">
-            <img src="https://imgur.com/vZD4UrJ.png" alt="Marixander Logo" class="logo">
+            <a href="index.html">
+                <img src="https://imgur.com/vZD4UrJ.png" alt="Marixander Logo" class="logo">
+            </a>
         </div>
         <nav class="navbar">
             <ul class="menu">
@@ -43,98 +44,110 @@
         </nav>
     </header>
 
-    <!-- Hovedinnhold -->
-    <main>
-   <!-- Velkomstseksjon -->
-<section class="welcome-section">
-    <div class="image-container">
-        <img src="https://imgur.com/Ij1zb2g.jpg" alt="Kreativt studio" class="welcome-image">
-    </div>
+   <div class="content-wrapper">
+    <!-- Venstre: Tekstcontainer -->
     <div class="text-container">
         <h1>Velkommen til Marixander</h1>
-        <p>Vi er Marielle og Alexander, og sammen utgjør vi Marixander – et kreativt studio som spesialiserer seg på visuelle kunstverk og webdesign. Oppdag våre unike tjenester innen fotografering, maleri og webutvikling, og se hvordan vi kan gi liv til dine visjoner. Våre prosjekter har som mål å fange både det visuelle og følelsesmessige, og vi streber etter å levere noe som virkelig betyr noe for våre kunder.</p>
-        <p>Vi elsker å utforske nye perspektiver, utnytte lys, farge, og tekniske ferdigheter for å skape unike kunstverk. Enten det handler om å skape magiske øyeblikk gjennom våre fotografier, lage unike malerier som gir rommet en egen sjel, eller utvikle en webside som representerer akkurat deg og dine verdier, er vi her for å gjøre dine visjoner til virkelighet.</p>
-        <div class="buttons-container">
-            <a href="portfolio.html" class="explore-button">Utforsk våre prosjekter</a>
+        <p>Vi er Marielle og Alexander, teamet bak Marixander – et kreativt studio som tilbyr unike tjenester innen fotografering, maleri og webdesign. Vi skaper uttrykksfulle kunstverk og nettsider som fanger opplevelser og visjoner, skreddersydd for våre kunder.</p>
+        <p>Gjennom kreative prosjekter ønsker vi å tilføre verdi til hvert rom, hver nettside, og hvert minne. Enten du er ute etter en personlig fotoshoot, et unikt maleri til hjemmet, eller en nettside som virkelig representerer deg og dine verdier, står vi klare til å bringe dine ideer til liv.</p>
+    </div>
+
+    <!-- Høyre: Bildecontainer med tekst under bilder -->
+    <div class="image-section">
+        <div class="image-container">
+            <img src="https://imgur.com/pM15Xrb.jpg" alt="Kreativt studio" class="welcome-image">
+            <img src="https://imgur.com/uqdo7Ep.jpg" alt="Kreativt studio" class="welcome-image">
+        </div>
+        <div class="text-below-images">
+            <p class="artwork-title">
+                <span style="font-size: 1.8em; color: #FFA500; transform: translateY(-3px);">&#8618;</span> Malerier av Marielle
+            </p>
+                <a href="portfolio.html" class="fancy-gallery-button">Sjekk vårt galleri</a>
+
         </div>
     </div>
-</section>
+</div>
+
+<div class="buttons-container">
+</div>
 
 
-    <section class="services-section">
+</div>
+
+
+    </main>
+</div>
+
+<!-- Tjenester-seksjon -->
+<section class="services-section">
     <h2>Våre Tjenester</h2>
     <div class="services-container">
-        <!-- Fotografering -->
-        <div class="service">
-            <i class="fas fa-camera-retro service-icon"></i>
-            <h3>Fotografering</h3>
-            <p>Vi fanger øyeblikkene som betyr mest. Spesialiserte tjenester innen portrett, natur, og eventfotografering.</p>
-            <a href="consulting.html" class="service-link">Les mer</a>
-        </div>
         <!-- Maleri -->
         <div class="service">
             <i class="fas fa-paint-brush service-icon"></i>
             <h3>Maleri</h3>
-            <p>Unike og tilpassede malerier som gir rommet ditt en egen sjel og skaper stemning.</p>
-            <a href="photography.html" class="service-link">Les mer</a>
+            <p>Unike og tilpassede malerier som gir rommet ditt en egen sjel og skaper stemning. Vi tilbyr også muligheter for å samarbeide om design og farger som passer perfekt til ditt hjem eller kontor, og vi skaper hvert verk med omhu og oppmerksomhet på detaljer.</p>
+            <a href="photography.html" class="fancy-service-button">Les mer</a>
         </div>
         <!-- Webutvikling -->
         <div class="service">
             <i class="fas fa-laptop-code service-icon"></i>
             <h3>Webutvikling</h3>
-            <p>Fra idé til ferdig nettsted – vi lager profesjonelle og brukervennlige nettsider tilpasset dine behov.</p>
-            <a href="web-development.html" class="service-link">Les mer</a>
+            <p>Fra idé til ferdig nettsted – vi lager profesjonelle og brukervennlige nettsider tilpasset dine behov. Vi fokuserer på å kombinere stil og funksjonalitet for å gi deg et nettsted som ikke bare ser bra ut, men som også er effektivt og brukervennlig.</p>
+            <a href="web-development.html" class="fancy-service-button">Les mer</a>
         </div>
         <!-- Konsultasjon -->
         <div class="service">
             <i class="fas fa-comments service-icon"></i>
             <h3>Konsultasjon</h3>
-            <p>Rådgivning innen kunst og webdesign for å hjelpe deg med å realisere dine kreative prosjekter.</p>
-            <a href="konsultasjon.html" class="service-link">Les mer</a>
+            <p>Rådgivning innen kunst og webdesign for å hjelpe deg med å realisere dine kreative prosjekter. Våre konsultasjoner tilpasses dine unike behov og gir deg innsikt og veiledning gjennom hele prosessen.</p>
+            <a href="konsultasjon.html" class="fancy-service-button">Les mer</a>
         </div>
     </div>
 </section>
 
+</section>
 
-</main>
+      <!-- Footer med full bredde -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>Om oss</h3>
+            <p>Vi er Marielle og Alexander, teamet bak Marixander – et kreativt studio innen fotografering, maleri og webdesign.</p>
+        </div>
 
+        <div class="footer-section resources">
+            <h3>Navigasjon</h3>
+            <ul class="footer-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Hjem</a></li>
+                <li><a href="photography.html"><i class="fas fa-camera"></i> Bilder</a></li>
+                <li><a href="design.html"><i class="fas fa-paint-brush"></i> Design</a></li>
+            </ul>
+        </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Om oss</h3>
-                <p>Vi er Marielle og Alexander, teamet bak Marixander <br>– et kreativt studio innen fotografering, maleri og webdesign.</p>
+        <div class="footer-section contact-info">
+            <h3>Kontakt oss</h3>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>nordlie@live.com</span>
             </div>
-            <div class="footer-section resources">
-                <h3>Navigasjon</h3>
-                <ul class="footer-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Hjem</a></li>
-                    <li><a href="photography.html"><i class="fas fa-camera"></i> Bilder</a></li>
-                    <li><a href="design.html"><i class="fas fa-paint-brush"></i> Design</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact-info">
-                <h3>Kontakt oss</h3>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@marixander.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <p>+47 123 45 678</p>
-                </div>
-            </div>
-            <div class="footer-section social-media">
-                <h3>Følg oss</h3>
-                <ul>
-                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
-                </ul>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>+47 92 05 86 05</span>
             </div>
         </div>
-    </footer>
 
+        <div class="footer-section social-media">
+            <h3>Følg oss</h3>
+            <ul class="social-menu">
+                <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
