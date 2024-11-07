@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* For generell tekst */
 
-
 /* Reset standard margin og padding */
 * {
     margin: 0;
@@ -33,12 +32,11 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-
 /* Header styling */
 header {
-    background: linear-gradient(90deg, #b0b0b0, #c0c0c0);
-    padding: 20px 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffb74d, #ffcc80); /* Lysere oransje gradient */
+    padding: 40px 40px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,14 +44,14 @@ header {
 }
 
 .header-logo-container {
-    max-width: 150px;
+    max-width: 200px;
 }
 
 .logo {
     max-width: 100%;
     height: auto;
     transition: transform 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 10px 4px rgba(0, 0, 0, 0.3));
 }
 
 .header-logo-container:hover .logo {
@@ -101,17 +99,15 @@ header {
     top: 100%;
     left: 0;
     background-color: #b0b0b0;
-    padding: 200px 0;
+    padding: 10px 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
 
-}
-
 .dropdown-menu li a {
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: #333;
     padding: 10px 15px;
     display: block;
     font-size: 15px;
@@ -125,63 +121,6 @@ header {
     color: #333;
 }
 
-/* Mobilvennlig header */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    justify-content: space-between;
-}
-
-.hamburger .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-/* Media queries for responsive design */
-@media only screen and (max-width: 600px) {
-    .navbar .menu {
-        display: none;
-    }
-    .hamburger {
-        display: flex;
-    }
-    #mobileMenu {
-        display: none;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 80%;
-        max-width: 300px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        z-index: 1000;
-    }
-    #mobileMenu.show {
-        display: block;
-    }
-    #mobileMenu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    #mobileMenu ul li {
-        padding: 10px 0;
-    }
-    #mobileMenu ul li a {
-        color: #fff;
-        font-size: 18px;
-        text-decoration: none;
-        display: block;
-    }
-}
 
 /* Hovedinnhold styling */
 .content-wrapper {
@@ -192,7 +131,7 @@ header {
 
 .text-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .text-container h1 {
@@ -275,115 +214,16 @@ header {
     background-color: #f9f9f9;
 }
 
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.service {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 350px;
-}
-
-.service h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.service-icon {
-    font-size: 2.5em;
-    color: #FFA500;
-    margin-bottom: 15px;
-}
-
-/* Footer styling */
-footer {
-    width: 100%;
-    background-color: #e0e0e0;
-    color: #444;
-    padding: 40px 20px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
-}
-
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-}
-
-.footer-section h3 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.footer-section p, .footer-section a {
-    color: #666;
-    font-size: 0.9em;
-    text-decoration: none;
-}
-
-/* Responsiv justering for små skjermer */
-@media (max-width: 480px) {
-    .text-container h1 {
-        font-size: 1.8em;
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-    .footer-section {
-        min-width: 100%;
-        text-align: center;
-    }
-}
-.dropdown-menu {
-    display: none; /* Skjul som standard */
-}
-
-.dropdown-menu.show {
-    display: block; /* Vis når .show er lagt til */
-}
-/* Tjenester-seksjon styling */
-.services-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
 .services-section h2 {
     font-size: 2em;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
 }
 
@@ -410,129 +250,77 @@ footer {
 .service-icon {
     font-size: 2.5em;
     color: #FFA500;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .service p {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #666;
     margin-bottom: 20px;
 }
 
-.service a {
-    color: #FFA500;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-}
-
-.service:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
 /* Footer styling */
 footer {
     width: 100%;
-    background-color: #e0e0e0;
-    color: #444;
+    background: linear-gradient(135deg, #ffb74d, #ffb74d); /* Lysere oransje gradient */
+    color: #333; /* Mørkere tekstfarge for kontrast */
     padding: 40px 20px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
     margin-top: auto;
 }
 
 .footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1000px; /* Maksimal bredde */
+    margin: 0 auto; /* Sentrerer innholdet */
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Lar seksjonene flyte */
+    justify-content: space-between; /* Fordeler plass mellom seksjoner */
+    gap: 20px; /* Avstand mellom seksjoner */
 }
 
 .footer-section {
-    flex: 1;
+    flex: 1; /* Lar seksjonene ta lik plass */
+    min-width: 200px; /* Setter en minimumsbredde */
 }
 
 .footer-section h3 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.6em;
+    margin-bottom: 5px;
 }
 
-.footer-section p,
-.footer-section a {
-    color: #666;
-    font-size: 0.9em;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    color: #333;
-}
-
-.footer-menu {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-menu li {
-    margin-bottom: 8px;
-}
-
-.footer-menu li a {
-    color: #666;
-    text-decoration: none;
-}
-
-.footer-menu li a:hover {
-    color: #333;
-}
-
+.footer-menu,
 .social-menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
+    list-style: none; /* Fjerner punkter */
+    padding: 0; /* Fjerner padding */
 }
 
+.footer-menu li,
+.social-menu li {
+    margin-bottom: 5px; /* Avstand mellom linker */
+}
+
+.footer-menu li a,
 .social-menu li a {
-    color: #666;
-    text-decoration: none;
-    font-size: 1.2em;
+    color: #333; /* Hvit tekstfarge */
+    text-decoration: none; /* Ingen understreking */
 }
 
+.footer-menu li a:hover,
 .social-menu li a:hover {
-    color: #333;
-}
-/* Stil for Les mer-knappen i Tjenester-seksjonen */
-.service a {
-    display: inline-block;
-    margin-top: auto;
-    padding: 10px 20px;
-    background-color: #333; /* Mørk bakgrunn */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    text-decoration: underline; /* Understrek ved hover */
 }
 
-.service a:hover {
-    background-color: #FFA500; /* Oransje ved hover */
-}
 
-/* Stil for Sjekk vårt galleri-knappen */
+/* Justering av "Sjekk vårt galleri"-knappen */
 .fancy-gallery-button {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #333; /* Mørk bakgrunn */
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
@@ -543,11 +331,12 @@ footer {
 /* Stil for "Malerier av Marielle"-teksten */
 .artwork-title {
     font-family: 'Indie Flower', cursive; /* Håndskriftstil */
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #FFA500;
     text-align: center;
-    margin-top: 1px;
+    margin-top: 2px;
 }
+
 /* Justering av velkomstbildene for rund form og overlapp */
 .image-container {
     display: flex;
@@ -586,22 +375,19 @@ footer {
 .text-below-images {
     text-align: center;
     margin-top: 60px; /* Plassering av teksten under overlappende bilder */
-}
-
 
 }
-/* Justering av velkomstbildene for rund form, overlapp og midtstilling */
+
+/* Justering av velkomstbildene for rund form og overlapp */
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1px;
+    gap: 50px; /* Justert for mindre mellomrom */
     margin-top: 60px;
     position: relative; /* Tillater absolutt plassering av bilder */
-    width: 100%; /* Sørger for at containeren er midtstilt */
 }
 
-/* Runde bilder med overlapping og midtstilling */
 .welcome-image {
     width: 150px;
     height: 150px;
@@ -609,35 +395,27 @@ footer {
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    position: absolute;
 }
 
+/* Overlapp og plassering */
 .welcome-image:first-child {
-    left: calc(50% - 140px); /* Plassering for første bilde til venstre */
-    transform: rotate(20deg); /* Rotasjon for første bilde */
-    z-index: 2;
+    position: absolute;
+    left: calc(1000% - 130px); /* Sentrerer første bilde */
+    transform: rotate(-20deg); /* Rotasjon for første bilde */
 }
 
 .welcome-image:last-child {
-    left: calc(50% - 20px); /* Plassering for andre bilde litt til høyre */
+    position: absolute;
+    left: calc(50% + -20px); /* Sentrerer andre bilde */
     transform: rotate(5deg); /* Rotasjon for andre bilde */
-    z-index: 1;
 }
 
 /* Sentral plassert tekst under bildene */
 .text-below-images {
     text-align: center;
-    margin-top: 40px; /* Plassering av teksten under overlappende bilder */
+    margin-top: 80px; /* Plassering av teksten under overlappende bilder */
 }
 
-.artwork-title {
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.2em;
-    color: #FFA500;
-    margin-top: 30px;
-}
-
-/* Optimalisert styling for tjenester-seksjon */
 .service {
     background-color: #ffffff;
     border-radius: 8px;
@@ -648,63 +426,330 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto; /* Justerer høyden automatisk basert på tekst */
-    padding-bottom: 50px; /* Ekstra plass for knappens overlapping */
-    position: relative; /* Tillater absolutt plassering av knappen */
-}
-
-.service p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.5;
-    text-align: left;
-    padding: 0 10px;
-    max-height: 120px; /* Setter maks høyde for jevn layout */
-    overflow-y: auto;
+    position: relative; /* Tillater absolutt posisjonering av knappen */
+    height: 350px;
 }
 
 /* Justering av "Les mer"-knappen */
 .service a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 1em;
     position: absolute;
-    bottom: -25px; /* Halvveis utenfor boksen */
+    bottom: -15px; /* Plasserer knappen halvveis utenfor bunnen av seksjonen */
     left: 50%;
     transform: translateX(-50%); /* Sentrerer knappen horisontalt */
+    padding: 10px 20px;
+    background-color: #333; /* Mørk bakgrunn */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Sørger for at knappen er over andre elementer */
 }
 
 .service a:hover {
-    background-color: #FFA500;
+    background-color: #FFA500; /* Oransje ved hover */
     transform: translateX(-50%) scale(1.05); /* Småskalering ved hover */
-}
-/* Justering av "Les mer"-knappen for optimal plassering */
-.service a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 1em;
-    position: absolute;
-    bottom: 5px; /* Halvveis utenfor bunnen av boksen */
-    left: 50%;
-    transform: translateX(-50%); /* Sentrerer knappen horisontalt */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 2; /* Sørger for at knappen ligger oppå boksen */
 }
 
-/* Hover-effekt for "Les mer"-knappen */
-.service a:hover {
-    background-color: #FFA500;
-    transform: translateX(-50%) scale(1.05); /* Småskalering ved hover */
+/* Sentrer alle seksjoner i footeren */
+.footer-section {
+    text-align: center;
+    margin: 0 auto;
 }
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Linjer mellom hovedmenyvalgene i hamburger-menyen */
+#mobileMenu ul li {
+    border-bottom: 1px solid #e0e0e0; /* Lys grå linje */
+    padding: 10px 0; /* Fjern side-padding for å utvide linjene */
+    margin: 0; /* Fjern margin for å sikre full bredde */
+    width: 100%; /* Sørg for at hvert element strekker seg over hele bredden */
+    text-align: left; /* Juster tekstens plassering om nødvendig */
+}
+
+/* Fjern linjen fra siste element i hovedmenyen */
+#mobileMenu ul li:last-child {
+    border-bottom: none;
+}
+
+/* Linjer mellom dropdown-menyvalgene i hamburger-menyen */
+.dropdown-menu li {
+    border-bottom: 1px solid #e0e0e0; /* Lys grå linje */
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+/* Fjern linjen fra siste element i dropdown-menyen */
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+/* Sentrering av linker i hovedmenyen i hamburger-menyen */
+#mobileMenu ul li {
+    border-bottom: 1px solid #e0e0e0; /* Linje mellom menyvalgene */
+    text-align: center; /* Sentrerer linkene */
+    padding: 10px 0; /* Justering av padding */
+    margin: 0;
+    width: 100%;
+}
+
+/* Sentrering av linker i dropdown-menyen */
+.dropdown-menu li {
+    border-bottom: 1px solid #e0e0e0; /* Linje mellom dropdown-valgene */
+    text-align: center; /* Sentrerer dropdown-linkene */
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #333;
+    background-color: #ffb74d; /* Endre etter din footers bakgrunnsfarge */
+    color: #333; /* Hvit tekst for kontrast */
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/* Galleri-styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox .close,
+.lightbox .prev,
+.lightbox .next {
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.lightbox .close { top: 20px; right: 20px; }
+.lightbox .prev { left: 10px; }
+.lightbox .next { right: 10px; }
+
+
+}
+
+/* Gallery styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 bilder per rad */
+    gap: 10px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%; /* Fyller hele cellen */
+    aspect-ratio: 1; /* Holder et kvadratisk format */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fyller rammen uten å forvrenge bildet */
+    border-radius: 8px;
+}
+/* Desktop-versjon av header-menyen */
+@media (min-width: 768px) {
+    .navbar .menu {
+        display: flex; /* Horisontal linjevisning */
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Juster avstanden mellom menyvalgene */
+    }
+
+    /* Skjul hamburger-menyen på desktop */
+    .hamburger {
+        display: none;
+    }
+
+    /* Meny linker */
+    .menu li {
+        position: relative;
+    }
+
+    .menu > li > a,
+    .menu > li > .non-clickable {
+        font-family: 'DM Serif Text', serif; /* Samme font for menyen */
+        color: #333; /* Mørkere farge for desktop */
+        font-size: 1em;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+    }
+
+    .menu > li > a:hover,
+    .menu > li > .non-clickable:hover {
+        color: #FFA500; /* Oransje hover-effekt */
+    }
+
+    /* Dropdown-meny for desktop */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .dropdown-menu li a {
+        color: #333;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f0f0f0;
+        color: #FFA500;
+    }
+}
+/* Mobil (mindre skjermer) */
+@media only screen and (max-width: 767px) {
+    .navbar .menu {
+        display: none; /* Skjuler den vanlige menyen */
+    }
+    .hamburger {
+        display: flex; /* Viser hamburger-menyen */
+    }
+    #mobileMenu.show {
+        display: block; /* Viser mobilmenyen når hamburger-menyen klikkes */
+        background-color: #333;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+}
+
+/* Mobilvennlig header */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 600px) {
+    .navbar .menu {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    #mobileMenu {
+        display: none;
+        background-color: #333;
+        position: absolute;
+        top: 180px;
+        right: 0;
+        width: 50%;
+        max-width: 150px;
+        padding: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        z-index: 1000;
+    }
+    #mobileMenu.show {
+        display: block;
+    }
+    #mobileMenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #mobileMenu ul li {
+        padding: 10px 0;
+    }
+    #mobileMenu ul li a {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        display: block;
+    }
+}
+/* Mobilvennlig styling */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column; /* Endre retning til kolonne på små skjermer */
+        align-items: center; /* Sentrer innholdet */
+    }
+}
+
+.dropdown-menu {
+    display: none; /* Skjul som standard */
+}
+
+.dropdown-menu.show {
+    display: block; /* Vis når .show er lagt til */
+}
+
+/* Mobilvennlighet */
+@media (max-width: 600px) {
+    .lightbox .close, .lightbox .prev, .lightbox .next {
+        font-size: 1.5rem;
+        padding: 8px;
+    }

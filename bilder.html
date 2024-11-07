@@ -16,7 +16,6 @@
         </a>
     </div>
 
-    <!-- Start på nav-taggen som omgir hamburger og mobilmeny -->
     <nav class="navbar">
         <div class="hamburger">
             <span class="bar"></span>
@@ -27,129 +26,98 @@
         <div id="mobileMenu" class="menu">
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-
                 <li class="dropdown">
-    <a href="#" class="non-clickable">Portfolio</a>
-    <ul class="dropdown-menu" id="portfolio-dropdown">
-        <li><a href="bilder.html">Bilder</a></li>
-        <li><a href="design.html">Design</a></li>
-    </ul>
-</li>
-<li class="dropdown">
-    <a href="#" class="non-clickable">Tjenester</a>
-    <ul class="dropdown-menu" id="tjenester-dropdown">
-        <li><a href="maling.html">Maling</a></li>
-        <li><a href="webutvikling.html">Webutvikling</a></li>
-    </ul>
-</li>
-
+                    <a href="#" class="non-clickable">Portfolio</a>
+                    <ul class="dropdown-menu" id="portfolio-dropdown">
+                        <li><a href="bilder.html">Bilder</a></li>
+                        <li><a href="design.html">Design</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="non-clickable">Tjenester</a>
+                    <ul class="dropdown-menu" id="tjenester-dropdown">
+                        <li><a href="maling.html">Maling</a></li>
+                        <li><a href="webutvikling.html">Webutvikling</a></li>
+                    </ul>
+                </li>
                 <li><a href="omoss.html">Om oss</a></li>
                 <li><a href="kontaktoss.html">Kontakt oss</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Slutt på nav-taggen -->
-
 </header>
 
 <main class="main-gallery">
-    <!-- Malerier seksjon -->
     <section class="gallery-section">
         <h2>Malerier</h2>
         <div class="gallery-container">
+            <!-- Galleri-bilder -->
             <div class="gallery-item"><img src="https://imgur.com/VNpYjhD.jpg" alt="Maleri 1"></div>
-            <div class="gallery-item"><img src="https://imgur.com/cvVmOem.jpg" alt="Maleri 2"></div>
-            <div class="gallery-item"><img src="https://imgur.com/KZnanAN.jpg" alt="Maleri 3"></div>
-            <div class="gallery-item"><img src="https://imgur.com/VVGCG3i.jpg" alt="Maleri 4"></div>
-            <div class="gallery-item"><img src="https://imgur.com/pM15Xrb.jpg" alt="Maleri 5"></div>
-            <div class="gallery-item"><img src="https://imgur.com/xo3Fvru.jpg" alt="Maleri 6"></div>
-            <div class="gallery-item"><img src="https://imgur.com/uqdo7Ep.jpg" alt="Maleri 7"></div>
-            <div class="gallery-item"><img src="https://imgur.com/e0OBa93.jpg" alt="Maleri 8"></div>
-            <div class="gallery-item"><img src="https://imgur.com/qD3t0UI.jpg" alt="Maleri 9"></div>
-            <div class="gallery-item"><img src="https://imgur.com/2zqg5uY.jpg" alt="Maleri 10"></div>
-            <div class="gallery-item"><img src="https://imgur.com/43WOeCk.jpg" alt="Maleri 11"></div>
-            <div class="gallery-item"><img src="https://imgur.com/WF68DKX.jpg" alt="Maleri 12"></div>
-            <div class="gallery-item"><img src="https://imgur.com/dNCTues.jpg" alt="Maleri 13"></div>
-            <div class="gallery-item"><img src="https://imgur.com/a9rNSvR.jpg" alt="Maleri 14"></div>
+<div class="gallery-item"><img src="https://imgur.com/cvVmOem.jpg" alt="Maleri 2"></div>
+<div class="gallery-item"><img src="https://imgur.com/KZnanAN.jpg" alt="Maleri 3"></div>
+<div class="gallery-item"><img src="https://imgur.com/VVGCG3i.jpg" alt="Maleri 4"></div>
+<div class="gallery-item"><img src="https://imgur.com/pM15Xrb.jpg" alt="Maleri 5"></div>
+<div class="gallery-item"><img src="https://imgur.com/xo3Fvru.jpg" alt="Maleri 6"></div>
+<div class="gallery-item"><img src="https://imgur.com/uqdo7Ep.jpg" alt="Maleri 7"></div>
+<div class="gallery-item"><img src="https://imgur.com/e0OBa93.jpg" alt="Maleri 8"></div>
+<div class="gallery-item"><img src="https://imgur.com/qD3t0UI.jpg" alt="Maleri 9"></div>
+<div class="gallery-item"><img src="https://imgur.com/2zqg5uY.jpg" alt="Maleri 10"></div>
+<div class="gallery-item"><img src="https://imgur.com/43WOeCk.jpg" alt="Maleri 11"></div>
+<div class="gallery-item"><img src="https://imgur.com/WF68DKX.jpg" alt="Maleri 12"></div>
+<div class="gallery-item"><img src="https://imgur.com/dNCTues.jpg" alt="Maleri 13"></div>
+<div class="gallery-item"><img src="https://imgur.com/a9rNSvR.jpg" alt="Maleri 14"></div>
+            <!-- Legg til flere gallery-items etter behov -->
         </div>
     </section>
 </main>
 
-
-
-    <!-- Lightbox-modal for å vise bildene i full størrelse -->
-<div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span> <!-- Lukkeknapp -->
-    <span class="prev" onclick="showPreviousImage()">&#10094;</span> <!-- Venstre pil -->
-    <div class="lightbox-content">
-        <img id="lightboxImg" src="" alt="Forstørret bilde">
-    </div>
-    <span class="next" onclick="showNextImage()">&#10095;</span> <!-- Høyre pil -->
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Lysboks for forstørrelse av bilder -->
+<!-- Lysboks for forstørrelse av bilder -->
 <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
-    <span class="prev" onclick="showPreviousImage()">&#10094;</span> <!-- Venstre pil -->
+    <span class="prev" onclick="showPreviousImage()">&#10094;</span>
     <img class="lightbox-content" id="lightboxImg" src="" alt="Forstørret bilde">
-    <span class="next" onclick="showNextImage()">&#10095;</span> <!-- Høyre pil -->
+    <span class="next" onclick="showNextImage()">&#10095;</span>
 </div>
 
-
-
-
-
-
-
-
-
-
-   <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Om oss</h3>
-                <p>Vi er Marielle og Alexander, teamet bak Marixander <br>– et kreativt studio innen fotografering, maleri og webdesign.</p>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>Om oss</h3>
+            <p>Marixander er et kreativt studio som tilbyr tjenester innen maleri og webdesign.</p>
+        </div>
+        <div class="footer-section resources">
+            <h3>Navigasjon</h3>
+            <ul class="footer-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Hjem</a></li>
+                <li><a href="bilder.html"><i class="fas fa-camera"></i> Bilder</a></li>
+                <li><a href="design.html"><i class="fas fa-paint-brush"></i> Design</a></li>
+                <li><a href="maling.html"><i class="fas fa-palette"></i> Maling</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-info">
+            <h3>Kontakt oss</h3>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>nordlie@live.com</span>
             </div>
-            <div class="footer-section resources">
-                <h3>Navigasjon</h3>
-                <ul class="footer-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Hjem</a></li>
-                    <li><a href="photography.html"><i class="fas fa-camera"></i> Bilder</a></li>
-                    <li><a href="design.html"><i class="fas fa-paint-brush"></i> Design</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact-info">
-                <h3>Kontakt oss</h3>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@marixander.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <p>+47 123 45 678</p>
-                </div>
-            </div>
-            <div class="footer-section social-media">
-                <h3>Følg oss</h3>
-                <ul>
-                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
-                </ul>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>+47 92 05 86 05</span>
             </div>
         </div>
-    </footer>
+        <div class="footer-section social-media">
+            <h3>Følg oss</h3>
+            <ul class="social-menu">
+                <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Marixander. Alle rettigheter reservert.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

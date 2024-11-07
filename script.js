@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     dropdownLinks.forEach(dropdownLink => {
         dropdownLink.addEventListener("click", function(event) {
-            event.preventDefault(); // Forhindrer standard klikk-handling for lenken
+            event.preventDefault();
             event.stopPropagation();
 
             const dropdownMenu = this.nextElementSibling;
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             closeAllDropdowns(); // Lukk alle dropdowns først
 
-            // Åpne dropdown bare hvis den ikke allerede er åpen
             if (!isDropdownVisible) {
                 dropdownMenu.classList.add("show");
             }
@@ -49,46 +48,63 @@ document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll(".gallery-item img");
     let currentIndex = 0;
 
-    if (lightbox && lightboxImg && images.length) {
-        function openLightbox(index) {
-            currentIndex = index;
-            updateLightboxImage();
-            lightbox.style.display = "flex";
-            document.addEventListener("keydown", handleKeyNavigation);
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex].src;
+        lightbox.style.display = "flex";
+        document.addEventListener("keydown", handleKeyNavigation);
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = "none";
+        document.removeEventListener("keydown", handleKeyNavigation);
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    function handleKeyNavigation(event) {
+        if (event.key === "ArrowRight") showNextImage();
+        else if (event.key === "ArrowLeft") showPreviousImage();
+        else if (event.key === "Escape") closeLightbox();
+    }
+
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => openLightbox(index));
+    });
+
+    document.querySelector(".close").addEventListener("click", closeLightbox);
+    document.querySelector(".next").addEventListener("click", showNextImage);
+    document.querySelector(".prev").addEventListener("click", showPreviousImage);
+
+    // Swipe-funksjonalitet for mobil
+    lightbox.addEventListener("touchstart", startTouch, false);
+    lightbox.addEventListener("touchmove", moveTouch, false);
+
+    let initialX = null;
+
+    function startTouch(e) {
+        initialX = e.touches[0].clientX;
+    }
+
+    function moveTouch(e) {
+        if (initialX === null) return;
+
+        let currentX = e.touches[0].clientX;
+        let diffX = initialX - currentX;
+
+        if (diffX > 0) {
+            showNextImage();
+        } else {
+            showPreviousImage();
         }
-
-        function updateLightboxImage() {
-            lightboxImg.src = images[currentIndex].src;
-        }
-
-        function closeLightbox() {
-            lightbox.style.display = "none";
-            document.removeEventListener("keydown", handleKeyNavigation);
-        }
-
-        function handleKeyNavigation(event) {
-            if (event.key === "ArrowRight") showNextImage();
-            else if (event.key === "ArrowLeft") showPreviousImage();
-            else if (event.key === "Escape") closeLightbox();
-        }
-
-        function showNextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateLightboxImage();
-        }
-
-        function showPreviousImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateLightboxImage();
-        }
-
-        document.querySelector('.prev').addEventListener('click', showPreviousImage);
-        document.querySelector('.next').addEventListener('click', showNextImage);
-
-        lightbox.addEventListener("click", event => {
-            if (event.target === lightbox) closeLightbox();
-        });
-
-        images.forEach((img, index) => img.addEventListener("click", () => openLightbox(index)));
+        initialX = null;
     }
 });
