@@ -6,46 +6,51 @@
     <title>Marixander</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=2.0, user-scalable=no">
-
 </head>
 <body>
 
-    <!-- Header med logo og meny -->
-    <header>
-        <div class="header-logo-container">
-                <a href="index.html"> <!-- Legger til lenken her -->
+<header>
+    <div class="header-logo-container">
+        <a href="index.html">
             <img src="https://imgur.com/vZD4UrJ.png" alt="Marixander Logo" class="logo">
-                    </a>
-        </div>
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="index.html">Hjem</a></li>
-                <li class="dropdown">
-                    <span class="non-clickable">Portfolio</span>
-                    <ul class="dropdown-menu">
-                        <li><a href="photography.html">Bilder</a></li>
-                        <li><a href="design.html">Design</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <span class="non-clickable">Tjenester</span>
-                    <ul class="dropdown-menu">
-                        <li><a href="consulting.html">Fotografering</a></li>
-                        <li><a href="web-development.html">Webutvikling</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">Om oss</a></li>
-                <li><a href="contact.html">Kontakt oss</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+        </a>
+    </div>
 
+    <!-- Start på nav-taggen som omgir hamburger og mobilmeny -->
+    <nav class="navbar">
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div id="mobileMenu" class="menu">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+
+                <li class="dropdown">
+    <a href="#" class="non-clickable">Portfolio</a>
+    <ul class="dropdown-menu" id="portfolio-dropdown">
+        <li><a href="bilder.html">Bilder</a></li>
+        <li><a href="design.html">Design</a></li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="non-clickable">Tjenester</a>
+    <ul class="dropdown-menu" id="tjenester-dropdown">
+        <li><a href="maling.html">Maling</a></li>
+        <li><a href="webutvikling.html">Webutvikling</a></li>
+    </ul>
+</li>
+
+                <li><a href="omoss.html">Om oss</a></li>
+                <li><a href="kontaktoss.html">Kontakt oss</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Slutt på nav-taggen -->
+
+</header>
     <!-- Hovedinnhold -->
     <main>
 <!-- Velkomstseksjon -->
